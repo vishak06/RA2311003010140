@@ -1,0 +1,7 @@
+{
+  "name": "logging-middleware",
+  "version": "1.0.0",
+  "description": "Centralized logging middleware",
+  "main": "index.js",
+  "type": "module"
+}
