@@ -59,16 +59,21 @@ export default function PriorityInbox() {
     const displayedNotifications = notifications.slice(0, topN);
 
     return (
-        <Container sx={{ mt: 4 }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
-                <Typography variant="h4">Priority Inbox</Typography>
-                <FormControl sx={{ minWidth: 150 }}>
-                    <InputLabel id="top-n-label">Top N</InputLabel>
+        <Box>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4, flexWrap: 'wrap', gap: 2 }}>
+                <Typography variant="h4" component="h1" sx={{ fontWeight: 600, color: '#111', letterSpacing: '-1px' }}>
+                    Priority Inbox
+                </Typography>
+
+                <FormControl size="small" sx={{ minWidth: 150 }}>
+                    <InputLabel id="top-n-label" sx={{ background: '#f8fafc', px: 0.5 }}>Top N</InputLabel>
                     <Select
                         labelId="top-n-label"
+                        id="top-n-select"
                         value={topN}
                         label="Top N"
                         onChange={handleTopNChange}
+                        sx={{ background: '#fff' }}
                     >
                         <MenuItem value={10}>Top 10</MenuItem>
                         <MenuItem value={15}>Top 15</MenuItem>
@@ -99,6 +104,6 @@ export default function PriorityInbox() {
                     )}
                 </>
             )}
-        </Container>
+        </Box>
     );
 }

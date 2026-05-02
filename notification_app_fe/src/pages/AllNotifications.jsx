@@ -66,16 +66,21 @@ export default function AllNotifications() {
     };
 
     return (
-        <Container sx={{ mt: 4 }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
-                <Typography variant="h4">All Notifications</Typography>
-                <FormControl sx={{ minWidth: 200 }}>
-                    <InputLabel id="type-filter-label">Filter by Type</InputLabel>
+        <Box>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4, flexWrap: 'wrap', gap: 2 }}>
+                <Typography variant="h4" component="h1" sx={{ fontWeight: 600, color: '#111', letterSpacing: '-1px' }}>
+                    All Notifications
+                </Typography>
+
+                <FormControl size="small" sx={{ minWidth: 150 }}>
+                    <InputLabel id="type-filter-label" sx={{ background: '#f8fafc', px: 0.5 }}>Filter by Type</InputLabel>
                     <Select
                         labelId="type-filter-label"
+                        id="type-filter"
                         value={typeFilter}
                         label="Filter by Type"
                         onChange={handleFilterChange}
+                        sx={{ background: '#fff' }}
                     >
                         <MenuItem value="All">All Types</MenuItem>
                         <MenuItem value="Placement">Placement</MenuItem>
@@ -111,6 +116,6 @@ export default function AllNotifications() {
                     </Box>
                 </>
             )}
-        </Container>
+        </Box>
     );
 }
