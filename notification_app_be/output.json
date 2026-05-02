@@ -1,84 +1,84 @@
 {
   "top10": [
     {
-      "ID": "ed941ead-ae7d-44f6-983f-a77dfe8dd205",
+      "ID": "7699c55c-bfa3-4dc6-859a-c386089184f4",
       "Type": "Placement",
-      "Message": "CSX Corporation hiring",
-      "Timestamp": "2026-05-02 05:49:45",
+      "Message": "Meta Platforms Inc. hiring",
+      "Timestamp": "2026-05-02 03:48:27",
       "priorityWeight": 3,
-      "priorityTime": 1777681185000
+      "priorityTime": 1777673907000
     },
     {
-      "ID": "3658d740-4b12-4f3b-8bc1-402698d5f654",
+      "ID": "e7f00824-95cf-47e2-a9bc-df168c316980",
       "Type": "Placement",
-      "Message": "Marvell Technology Inc. hiring",
-      "Timestamp": "2026-05-02 04:50:33",
+      "Message": "Booking Holdings Inc. hiring",
+      "Timestamp": "2026-05-02 01:49:45",
       "priorityWeight": 3,
-      "priorityTime": 1777677633000
+      "priorityTime": 1777666785000
     },
     {
-      "ID": "50fc8b95-d85a-4b36-a2c9-eeadccdcabee",
+      "ID": "bf1ec6fe-5fe9-4197-96ad-1000fb869242",
       "Type": "Placement",
-      "Message": "Amgen Inc. hiring",
-      "Timestamp": "2026-05-02 00:50:39",
+      "Message": "Visa Inc. hiring",
+      "Timestamp": "2026-05-01 16:18:51",
       "priorityWeight": 3,
-      "priorityTime": 1777663239000
+      "priorityTime": 1777632531000
     },
     {
-      "ID": "84abbfd8-aef3-4d4a-a7d1-21899d4ed659",
+      "ID": "0039a547-7483-460f-ba49-22f9b1c6ddd5",
       "Type": "Placement",
-      "Message": "Apple Inc. hiring",
-      "Timestamp": "2026-05-01 18:50:45",
+      "Message": "Meta Platforms Inc. hiring",
+      "Timestamp": "2026-05-01 10:49:33",
       "priorityWeight": 3,
-      "priorityTime": 1777641645000
+      "priorityTime": 1777612773000
     },
     {
-      "ID": "2fd63277-9b3f-4c92-84b9-b9e818c08619",
+      "ID": "c658ee78-5a2c-4c15-ab9b-9620216d5d97",
       "Type": "Placement",
-      "Message": "Amazon.com Inc. hiring",
-      "Timestamp": "2026-05-01 18:20:51",
+      "Message": "Booking Holdings Inc. hiring",
+      "Timestamp": "2026-05-01 07:19:15",
       "priorityWeight": 3,
-      "priorityTime": 1777639851000
+      "priorityTime": 1777600155000
     },
     {
-      "ID": "7a0f9f7e-65db-4266-8a64-7c2740a5d60e",
-      "Type": "Placement",
-      "Message": "Advanced Micro Devices Inc. hiring",
-      "Timestamp": "2026-05-01 17:21:09",
-      "priorityWeight": 3,
-      "priorityTime": 1777636269000
-    },
-    {
-      "ID": "0dd071a8-78cd-44e2-bc0d-3435f5bede57",
-      "Type": "Placement",
-      "Message": "Eli Lilly and Company hiring",
-      "Timestamp": "2026-05-01 15:20:15",
-      "priorityWeight": 3,
-      "priorityTime": 1777629015000
-    },
-    {
-      "ID": "a99dd053-27ea-4a6c-811c-5f98742b779f",
+      "ID": "d934ad5e-71dc-4fc4-9783-c0c449b14690",
       "Type": "Result",
-      "Message": "external",
-      "Timestamp": "2026-05-02 02:51:03",
+      "Message": "end-sem",
+      "Timestamp": "2026-05-02 05:48:09",
       "priorityWeight": 2,
-      "priorityTime": 1777670463000
+      "priorityTime": 1777681089000
     },
     {
-      "ID": "d938da5a-1d8f-46d7-a206-33ba6e49b3c6",
+      "ID": "62050673-924f-4caf-bca1-0fd366c9cdf6",
       "Type": "Result",
-      "Message": "external",
-      "Timestamp": "2026-05-01 14:51:33",
+      "Message": "end-sem",
+      "Timestamp": "2026-05-02 05:19:39",
       "priorityWeight": 2,
-      "priorityTime": 1777627293000
+      "priorityTime": 1777679379000
     },
     {
-      "ID": "0d415df5-fb52-4d44-adaf-fc8d0a66b722",
+      "ID": "5d5de903-4ba7-4e0c-a48d-ae0a34f7d366",
+      "Type": "Result",
+      "Message": "mid-sem",
+      "Timestamp": "2026-05-01 23:18:15",
+      "priorityWeight": 2,
+      "priorityTime": 1777657695000
+    },
+    {
+      "ID": "6ce26d33-4e58-46b9-97a2-4fd6ba6e6e28",
       "Type": "Result",
       "Message": "project-review",
-      "Timestamp": "2026-05-01 14:50:57",
+      "Timestamp": "2026-05-01 15:49:57",
       "priorityWeight": 2,
-      "priorityTime": 1777627257000
+      "priorityTime": 1777630797000
+    },
+    {
+      "ID": "52c1159f-f35d-40dc-97ad-3b0087e910a8",
+      "Type": "Result",
+      "Message": "internal",
+      "Timestamp": "2026-05-01 13:48:21",
+      "priorityWeight": 2,
+      "priorityTime": 1777623501000
     }
   ]
 }

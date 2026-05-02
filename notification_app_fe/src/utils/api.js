@@ -1,7 +1,7 @@
 import { Log } from 'logging-middleware';
 
 const NOTIFICATIONS_API = "/evaluation-service/notifications";
-const AUTH_TOKEN = import.meta.env.VITE_AUTH_TOKEN;
+const AUTH_TOKEN = import.meta.env.AUTH_TOKEN;
 
 export async function fetchNotifications(params = {}) {
     await Log('frontend', 'info', 'api', 'Initiating API fetch for notifications');

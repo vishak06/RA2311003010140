@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   envDir: '../',
+  envPrefix: ['VITE_', 'AUTH_TOKEN'],
   server: {
     port: 3000,
     proxy: {
