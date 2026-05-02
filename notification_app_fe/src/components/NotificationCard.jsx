@@ -21,20 +21,25 @@ export default function NotificationCard({ notification, isViewed, onView }) {
         <Card 
             elevation={0}
             sx={{ 
-                mb: 2, 
+                mb: 2.5, 
                 border: '1px solid',
-                borderColor: isViewed ? '#eaeaea' : '#e3f2fd',
-                backgroundColor: isViewed ? '#fafafa' : '#ffffff',
-                transition: 'box-shadow 0.2s',
+                borderColor: isViewed ? 'rgba(255, 255, 255, 0.4)' : 'rgba(255, 255, 255, 0.8)',
+                backgroundColor: isViewed ? 'rgba(250, 250, 250, 0.5)' : 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(12px)',
+                borderRadius: '16px',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 '&:hover': {
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
+                    transform: 'translateY(-3px)',
+                    boxShadow: '0 12px 24px -10px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.05)',
+                    borderColor: 'rgba(255, 255, 255, 1)',
+                    backgroundColor: 'rgba(255, 255, 255, 1)',
                 }
             }}
         >
             <CardContent sx={{ pb: '16px !important' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1.5 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        {!isViewed && <CircleIcon sx={{ fontSize: 10, color: '#1976d2' }} />}
+                        {!isViewed && <CircleIcon sx={{ fontSize: 10, color: '#57534e' }} />}
                         <Typography variant="h6" component="div" sx={{ fontWeight: isViewed ? 500 : 600, color: isViewed ? '#555' : '#111', fontSize: '1.1rem' }}>
                             {notification.Title || notification.title}
                         </Typography>
@@ -44,7 +49,14 @@ export default function NotificationCard({ notification, isViewed, onView }) {
                         color={chipColor} 
                         size="small" 
                         variant={isViewed ? "outlined" : "filled"}
-                        sx={{ fontWeight: 500 }}
+                        sx={{ 
+                            fontWeight: 600, 
+                            borderRadius: '8px', 
+                            px: 0.5,
+                            letterSpacing: '0.5px',
+                            textTransform: 'uppercase',
+                            fontSize: '0.7rem'
+                        }}
                     />
                 </Box>
                 <Typography variant="body2" sx={{ mb: 2, color: isViewed ? '#777' : '#444', lineHeight: 1.6 }}>
@@ -58,7 +70,18 @@ export default function NotificationCard({ notification, isViewed, onView }) {
                         <Button 
                             size="small" 
                             onClick={handleViewClick}
-                            sx={{ textTransform: 'none', fontWeight: 600, px: 2 }}
+                            variant="contained"
+                            color="primary"
+                            disableElevation
+                            sx={{ 
+                                textTransform: 'none', 
+                                fontWeight: 600, 
+                                px: 2,
+                                borderRadius: '8px',
+                                '&:hover': {
+                                    backgroundColor: 'primary.dark',
+                                }
+                            }}
                         >
                             Mark as Read
                         </Button>

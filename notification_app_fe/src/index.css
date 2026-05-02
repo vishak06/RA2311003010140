@@ -52,7 +52,9 @@
 
 body {
   margin: 0;
-  background-color: #f8fafc;
+  background: linear-gradient(-45deg, #ada996 0%, #ada996 35%, #f2f2f2 60%, #dbdbdb 80%, #eaeaea 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 #root {
