@@ -1,8 +1,15 @@
 import fs from 'fs';
 import { Log } from 'logging-middleware';
+import * as dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+dotenv.config({ path: join(__dirname, '../.env') });
 
 const NOTIFICATIONS_API = "http://20.207.122.201/evaluation-service/notifications";
-const AUTH_TOKEN = process.env.AUTH_TOKEN;
+const AUTH_TOKEN = process.env.VITE_AUTH_TOKEN || process.env.AUTH_TOKEN;
 
 const TYPE_WEIGHTS = {
     'Placement': 3,
