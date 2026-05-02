@@ -23,8 +23,8 @@ export default function PriorityInbox() {
             setLoading(true);
             setError(null);
             try {
-                // Fetch all (or a large batch) to determine top N properly
-                const data = await fetchNotifications({ limit: 100 }); 
+                // Fetch notifications without explicit high limit to avoid 400 Bad Request
+                const data = await fetchNotifications(); 
                 if (data === null) {
                     setError('Failed to fetch notifications. Please check your token or network.');
                 } else {
@@ -90,9 +90,9 @@ export default function PriorityInbox() {
                     ) : (
                         displayedNotifications.map((notif, index) => (
                             <NotificationCard
-                                key={notif.id || index}
+                                key={notif.ID || notif.id || index}
                                 notification={notif}
-                                isViewed={viewedIds.includes(notif.id || notif.title)}
+                                isViewed={viewedIds.includes(notif.ID || notif.id || notif.title || notif.Title)}
                                 onView={handleView}
                             />
                         ))

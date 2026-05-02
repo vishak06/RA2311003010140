@@ -1,7 +1,7 @@
 import { Log } from 'logging-middleware';
 
-const NOTIFICATIONS_API = "http://20.207.122.201/evaluation-service/notifications";
-const AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJ2ajcyMzVAc3JtaXN0LmVkdS5pbiIsImV4cCI6MTc3NzcwMDM5NSwiaWF0IjoxNzc3Njk5NDk1LCJpc3MiOiJBZmZvcmQgTWVkaWNhbCBUZWNobm9sb2dpZXMgUHJpdmF0ZSBMaW1pdGVkIiwianRpIjoiZTBhNDNmZDQtOTMzNy00MDY2LWJkODItYTBlOTEzMGRhNjgxIiwibG9jYWxlIjoiZW4tSU4iLCJuYW1lIjoidmlzaGFrIGoiLCJzdWIiOiI1YmY2OTYyNC03MGNlLTQyNTctODExZC05M2YzNGQ1YzdmOTYifSwiZW1haWwiOiJ2ajcyMzVAc3JtaXN0LmVkdS5pbiIsIm5hbWUiOiJ2aXNoYWsgaiIsInJvbGxObyI6InJhMjMxMTAwMzAxMDE0MCIsImFjY2Vzc0NvZGUiOiJRa2JweEgiLCJjbGllbnRJRCI6IjViZjY5NjI0LTcwY2UtNDI1Ny04MTFkLTkzZjM0ZDVjN2Y5NiIsImNsaWVudFNlY3JldCI6InpWalhiVGNiRU1XSGJOZW0ifQ.-_3GdwCj30zVPZZBx5YYDN_IB9rBr5dL6sb7p5eHiaU";
+const NOTIFICATIONS_API = "/evaluation-service/notifications";
+const AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJ2ajcyMzVAc3JtaXN0LmVkdS5pbiIsImV4cCI6MTc3NzcwMzU3NSwiaWF0IjoxNzc3NzAyNjc1LCJpc3MiOiJBZmZvcmQgTWVkaWNhbCBUZWNobm9sb2dpZXMgUHJpdmF0ZSBMaW1pdGVkIiwianRpIjoiMzQ5ZGZiZDgtYWQ4Yy00Y2ExLWE0ZDEtMDdkMjBiMDgzMDAwIiwibG9jYWxlIjoiZW4tSU4iLCJuYW1lIjoidmlzaGFrIGoiLCJzdWIiOiI1YmY2OTYyNC03MGNlLTQyNTctODExZC05M2YzNGQ1YzdmOTYifSwiZW1haWwiOiJ2ajcyMzVAc3JtaXN0LmVkdS5pbiIsIm5hbWUiOiJ2aXNoYWsgaiIsInJvbGxObyI6InJhMjMxMTAwMzAxMDE0MCIsImFjY2Vzc0NvZGUiOiJRa2JweEgiLCJjbGllbnRJRCI6IjViZjY5NjI0LTcwY2UtNDI1Ny04MTFkLTkzZjM0ZDVjN2Y5NiIsImNsaWVudFNlY3JldCI6InpWalhiVGNiRU1XSGJOZW0ifQ.VTDcCDpFCYtGBCFpm-fHYFbJshAJaStugtqHJ8lvbW0";
 
 export async function fetchNotifications(params = {}) {
     await Log('frontend', 'info', 'api', 'Initiating API fetch for notifications');
@@ -32,13 +32,15 @@ export async function fetchNotifications(params = {}) {
             return null;
         }
 
-        if (!data || !Array.isArray(data)) {
+        const notificationsArray = data.notifications || data;
+
+        if (!notificationsArray || !Array.isArray(notificationsArray)) {
             await Log('frontend', 'warn', 'api', 'Invalid or empty response format received');
             return [];
         }
 
-        await Log('frontend', 'info', 'api', `Successfully fetched ${data.length} notifications`);
-        return data;
+        await Log('frontend', 'info', 'api', `Successfully fetched ${notificationsArray.length} notifications`);
+        return notificationsArray;
     } catch (error) {
         await Log('frontend', 'fatal', 'api', `Network error during API fetch: ${error.message}`);
         return null;

@@ -98,9 +98,9 @@ export default function AllNotifications() {
                     ) : (
                         notifications.map((notif, index) => (
                             <NotificationCard
-                                key={notif.id || index}
+                                key={notif.ID || notif.id || index}
                                 notification={notif}
-                                isViewed={viewedIds.includes(notif.id || notif.title)}
+                                isViewed={viewedIds.includes(notif.ID || notif.id || notif.title || notif.Title)}
                                 onView={handleView}
                             />
                         ))

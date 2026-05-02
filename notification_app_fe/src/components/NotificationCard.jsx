@@ -4,8 +4,8 @@ import { Log } from 'logging-middleware';
 
 export default function NotificationCard({ notification, isViewed, onView }) {
     const handleViewClick = async () => {
-        await Log('frontend', 'info', 'component', `User clicked view on notification ${notification.id || notification.title}`);
-        onView(notification.id || notification.title);
+        await Log('frontend', 'info', 'component', `User clicked view on notification ${notification.ID || notification.id || notification.title || notification.Title}`);
+        onView(notification.ID || notification.id || notification.title || notification.Title);
     };
 
     return (
@@ -13,15 +13,15 @@ export default function NotificationCard({ notification, isViewed, onView }) {
             <CardContent>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
                     <Typography variant="h6" component="div">
-                        {notification.title}
+                        {notification.Title || notification.title}
                     </Typography>
-                    <Chip label={notification.type} color="primary" size="small" />
+                    <Chip label={notification.Type || notification.type} color="primary" size="small" />
                 </Box>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                    {new Date(notification.timestamp || notification.date).toLocaleString()}
+                    {new Date(notification.Timestamp || notification.timestamp || notification.date).toLocaleString()}
                 </Typography>
                 <Typography variant="body2" sx={{ mt: 1, mb: 2 }}>
-                    {notification.message}
+                    {notification.Message || notification.message}
                 </Typography>
                 {!isViewed && (
                     <Button size="small" variant="outlined" onClick={handleViewClick}>
